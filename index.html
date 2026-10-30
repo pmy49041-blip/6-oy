@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saffron & Ember — Restoran</title>
+  <!-- Tailwind CSS (CDN orqali, alohida style.css kerak emas) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            fon: '#141210',
+            karta: '#1d1a17',
+            oltin: '#e8a03c',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-fon text-stone-200 font-sans">
+  <!-- Rasmlar "images" papkasida turishi kerak: index.html bilan yonma-yon -->
+
+  <!-- Hero (navbar ichida) -->
+  <section class="relative flex min-h-screen flex-col overflow-hidden bg-stone-900">
+
+    <img src="./img/Container (4).png" alt="Gril ustida go'sht pishirayotgan oshpaz" class="absolute inset-0 h-full w-full object-cover" />
+    <!-- Qoraytirish qatlami: matn yaxshi o'qilishi uchun -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80"></div>
+
+    <!-- Navbar -->
+    <header class="relative z-10 bg-black/40 backdrop-blur">
+     <div class="mx-auto w-full max-w-6xl px-6 flex items-center justify-between py-4">
+      <a href="#" class="font-serif text-2xl text-oltin">Saffron & Ember</a>
+      <nav class="hidden gap-8 text-xs font-medium uppercase tracking-wider text-stone-300 md:flex">
+        <a href="#menyu" class="border-b-2 border-oltin pb-1 text-oltin">Menyu</a>
+        <a href="#tajriba" class="pb-1 hover:text-white">Tajriba</a>
+        <a href="#bron" class="pb-1 hover:text-white">Shaxsiy ziyofat</a>
+        <a href="#galereya" class="pb-1 hover:text-white">Galereya</a>
+      </nav>
+      <a href="#bron" class="rounded-full bg-gradient-to-r from-orange-500 to-amber-400 px-6 py-2.5 text-sm font-semibold text-black">Stol band qilish</a>
+     </div>
+    </header>
+
+    <!-- Asosiy matn -->
+    <div class="relative z-10 flex flex-1 flex-col items-center justify-center text-center mx-auto w-full max-w-6xl px-6">
+      <p class="text-[11px] font-medium uppercase tracking-[0.3em] text-oltin">1998-yildan beri yuqori darajadagi oshxona</p>
+      <h1 class="mt-6 max-w-3xl font-serif text-5xl font-medium leading-tight text-white md:text-7xl">Ta'mdan tashqari bir tajriba</h1>
+    </div>
+
+    <!-- Mukofotlar chizig'i -->
+    <div class="relative z-10 border-t border-white/10 py-5">
+      <div class="mx-auto w-full max-w-6xl px-6 flex flex-col items-center justify-between gap-3 text-[11px] font-medium uppercase tracking-wider text-stone-300 md:flex-row">
+        <p>Michelin Guide 2023 tavsiya etilgan</p>
+        <p><span class="text-oltin">🏆</span> Top 50 gastronomiya yo'nalishlari</p>
+        <p><span class="text-oltin">🍴</span> World Luxury Restaurant Awards</p>
+      </div>
+    </div>
+
+    <!-- Pastga o'tish belgisi -->
+    <a href="#haqimizda" class="relative z-10 flex flex-col items-center gap-1 pb-4 text-[9px] uppercase tracking-widest text-stone-500">
+      <span class="flex h-8 w-5 justify-center rounded-full border border-oltin pt-1.5">
+        <span class="h-1.5 w-0.5 rounded bg-oltin"></span>
+      </span>
+      Pastga
+    </a>
+  </section>
+
+  <!-- Oshpazdan maxsus taomlar -->
+  <section id="haqimizda" class="py-20">
+    <div class="mx-auto w-full max-w-6xl px-6 grid items-center gap-10 md:grid-cols-2">
+
+      <!-- Chap: matn -->
+      <div class="max-w-md">
+        <p class="text-xs font-medium uppercase tracking-wider text-oltin">Oshpazdan maxsus taomlar</p>
+        <h2 class="mt-4 font-serif text-4xl font-medium text-white">Olovda qovurilgan Sakkizoyoq</h2>
+        <p class="mt-4 text-sm leading-relaxed text-stone-400">
+          12 soat davomida sekin pishirilgan, so'ngra yapon Binchotan ko'mirida yakunlangan.
+          Za'faronli ayoli va dudlangan paprika moyi bilan tortiladi.
+        </p>
+        <span class="mt-4 inline-block rounded-full bg-karta px-4 py-1.5 font-serif text-sm text-oltin">$48.00</span>
+
+        <div class="mt-8 flex gap-3">
+          <button class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-800 text-stone-300 hover:border-oltin" aria-label="Oldingi">&lsaquo;</button>
+          <button class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-800 text-stone-300 hover:border-oltin" aria-label="Keyingi">&rsaquo;</button>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-stone-900"><img src="./img/Container (6).png" alt="Olovda qovurilgan sakkizoyoq" class="h-full w-full object-cover" /></div>
+        <div class="absolute -bottom-4 -right-2 flex h-24 w-24 items-center justify-center rounded-full border border-stone-800 bg-fon p-3 text-center text-[9px] uppercase tracking-widest text-oltin">
+          Oshpaz tanlovi
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Olov va ishtiyoq bilan yaratilgan -->
+  <section id="tajriba" class="py-20">
+    <div class="mx-auto w-full max-w-6xl px-6 grid items-center gap-12 md:grid-cols-2">
+
+      <!-- Chap: ikkita rasm -->
+      <div class="relative mx-auto h-96 w-full max-w-md">
+        <!-- Orqadagi ingichka ramka -->
+        <div class="absolute bottom-0 right-0 h-3/5 w-[47%] border border-stone-800"></div>
+        <!-- Oshxona rasmi -->
+        <div class="absolute bottom-[22%] left-0 h-[48%] w-[47%] overflow-hidden rounded-lg bg-stone-900"><img src="images/oshxona.jpg" alt="Bug chiqib turgan oshxona" class="h-full w-full object-cover" /></div>
+        <!-- Zal rasmi -->
+        <div class="absolute right-[1%] top-0 h-[48%] w-[47%] overflow-hidden rounded-lg bg-stone-900"><img src="images/zal.jpg" alt="Restoran zali" class="h-full w-full object-cover" /></div>
+      </div>
+
+      <!-- O'ng: matn -->
+      <div>
+        <h2 class="font-serif text-4xl font-medium leading-tight text-white">Olov va ishtiyoq bilan yaratilgan</h2>
+        <div class="mt-6 h-px bg-gradient-to-r from-oltin/50 to-transparent"></div>
+        <p class="mt-6 text-sm leading-relaxed text-stone-400">
+          Bizning sayohatimiz oddiy ishonch bilan boshlandi: olov taom pishirishning eng samimiy usulidir.
+          Saffron & Ember-da biz issiqlik va mahsulot o'rtasidagi sof, asosiy aloqani nishonlash uchun
+          zamonaviy oshxonaning barcha sun'iyliklarini olib tashlaymiz.
+        </p>
+
+        <div class="mt-6 grid grid-cols-2 gap-y-6 border-y border-stone-800 py-6">
+          <div>
+            <p class="font-serif text-3xl text-oltin">25+</p>
+            <p class="mt-1 text-xs uppercase text-stone-500">Yillik tajriba</p>
+          </div>
+          <div>
+            <p class="font-serif text-3xl text-oltin">03</p>
+            <p class="mt-1 text-xs uppercase text-stone-500">Global manzillar</p>
+          </div>
+          <div>
+            <p class="font-serif text-3xl text-oltin">140+</p>
+            <p class="mt-1 text-xs uppercase text-stone-500">Noyob taomlar</p>
+          </div>
+          <div>
+            <p class="font-serif text-3xl text-oltin">12k</p>
+            <p class="mt-1 text-xs uppercase text-stone-500">Mehmonlar</p>
+          </div>
+        </div>
+
+        <!-- Bosh oshpaz -->
+        <div class="mt-6 flex items-center gap-6">
+          <div class="h-14 w-24 overflow-hidden rounded bg-stone-900"><img src="images/bosh-oshpaz.jpg" alt="Bosh oshpaz Markus Torn" class="h-full w-full object-cover" /></div>
+          <p class="text-sm text-stone-400">Bosh oshpaz, Markus Torn</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- ===== MENYU BO'LIMI ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+
+    <!-- Sarlavha -->
+    <div class="text-center">
+      <p class="text-sm font-medium tracking-wider text-orange-400 uppercase">Gastronomiya</p>
+      <h2 class="font-serif text-5xl md:text-6xl mt-4">Tanlangan menyular</h2>
+    </div>
+
+    <!-- Tab tugmalari -->
+    <div class="flex justify-center mt-10">
+      <div class="flex flex-wrap justify-center gap-1 p-1.5 rounded-full border border-white/10 bg-white/5">
+
+        <!-- Aktiv tab (Kechki ovqat) -->
+        <button data-tab="kechki"
+          class="tab-btn px-7 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-400 text-black">
+          Kechki ovqat
+        </button>
+
+        <button data-tab="nonushta"
+          class="tab-btn px-7 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white">
+          Nonushta
+        </button>
+
+        <button data-tab="tushlik"
+          class="tab-btn px-7 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white">
+          Tushlik
+        </button>
+
+        <button data-tab="oshpaz"
+          class="tab-btn px-7 py-3 rounded-full text-sm font-medium text-gray-300 hover:text-white">
+          Oshpaz maxsusi
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== 1) KECHKI OVQAT ===== -->
+    <div id="kechki" class="tab-panel grid md:grid-cols-3 gap-10 mt-16">
+
+      <!-- 1-karta -->
+      <div>
+        <img src="./img/Container (13).png" alt="Qovurilgan taroqchalar"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Qovurilgan taroqchalar</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$32</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Qora sarimsoq, za'faron ko'pigi, kuydirilgan porey piyozi.
+        </p>
+      </div>
+
+      <!-- 2-karta (pastroqda turadi: md:mt-9) -->
+      <div class="md:mt-9">
+        <img src="./img/Container (14).png" alt="Pishirilgan Ribay"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Pishirilgan Ribay</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$64</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          45 kun davomida pishirilgan, dudlangan ilik yog'i, tryufel sharbati.
+        </p>
+      </div>
+
+      <!-- 3-karta -->
+      <div>
+        <img src="./img/Container (15).png" alt="Dudlangan Kakao"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Dudlangan Kakao</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$24</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          70% qora shokolad, dudlangan tuz, malinali cho'g'.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== 2) NONUSHTA ===== -->
+    <div id="nonushta" class="tab-panel hidden grid md:grid-cols-3 gap-10 mt-16">
+
+      <div>
+        <img src="images/omlet.jpg" alt="Qaymoqli omlet"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Qaymoqli omlet</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$14</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Uchta fermer tuxumi, yangi o'tlar, qaymoq va qo'ziqorin.
+        </p>
+      </div>
+
+      <div class="md:mt-9">
+        <img src="images/avokado.jpg" alt="Avokadoli tost"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Avokadoli tost</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$12</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Xamirturushli non, pishgan avokado, poch qilingan tuxum, limon.
+        </p>
+      </div>
+
+      <div>
+        <img src="images/kruassan.jpg" alt="Qatlamali kruassan"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Qatlamali kruassan</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$9</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Sariyog'li xamir, o'rik murabbosi va issiq qahva bilan.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== 3) TUSHLIK ===== -->
+    <div id="tushlik" class="tab-panel hidden grid md:grid-cols-3 gap-10 mt-16">
+
+      <div>
+        <img src="images/shorva.jpg" alt="Qovoqli krem sho'rva"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Qovoqli krem sho'rva</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$18</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Pishirilgan qovoq, zanjabil, qovurilgan urug'lar va zaytun moyi.
+        </p>
+      </div>
+
+      <div class="md:mt-9">
+        <img src="images/sezar.jpg" alt="Tovuqli Sezar salati"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Tovuqli Sezar salati</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$22</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Grilda pishirilgan tovuq, romen bargi, parmezan va qarsildoq non.
+        </p>
+      </div>
+
+      <div>
+        <img src="images/burger.jpg" alt="Mol go'shtli burger"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Mol go'shtli burger</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$26</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Qo'lda tayyorlangan kotlet, karamellashgan piyoz, cheddar pishlog'i.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== 4) OSHPAZ MAXSUSI ===== -->
+    <div id="oshpaz" class="tab-panel hidden grid md:grid-cols-3 gap-10 mt-16">
+
+      <div>
+        <img src="images/makaron.jpg" alt="Tryufelli makaron"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Tryufelli makaron</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$48</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Uyda yoyilgan xamir, qora tryufel, sariyog' va eskirgan pishloq.
+        </p>
+      </div>
+
+      <div class="md:mt-9">
+        <img src="images/ordak.jpg" alt="Asalli o'rdak"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Asalli o'rdak</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$56</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Asal va zira bilan lak surtilgan ko'krak, olxo'ri sousi.
+        </p>
+      </div>
+
+      <div>
+        <img src="images/desert.jpg" alt="Oltin sufle"
+          class="w-full aspect-[4/3] object-cover rounded-2xl bg-neutral-800" />
+        <div class="flex items-baseline gap-3 mt-6">
+          <h3 class="font-serif text-2xl text-orange-400">Oltin sufle</h3>
+          <span class="flex-1 border-b border-dotted border-white/20"></span>
+          <span class="font-serif text-lg text-orange-400">$38</span>
+        </div>
+        <p class="mt-2 text-sm text-gray-400 leading-relaxed">
+          Vanil, karamel sousi va yeyiladigan oltin barg.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pastdagi havola -->
+    <div class="text-center mt-20">
+      <a href="./taomnoma.html" class="text-sm font-medium tracking-wider text-orange-400 uppercase hover:text-amber-300">
+        To'liq menyuni ko'rish
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ===== TABLARNI ALMASHTIRISH (oddiy JavaScript) ===== -->
+  <script>
+    // Barcha tugma va panellarni olamiz
+    const tugmalar = document.querySelectorAll(".tab-btn");
+    const panellar = document.querySelectorAll(".tab-panel");
+
+    // Aktiv va aktiv bo'lmagan tugma uchun Tailwind klasslari
+    const aktivKlass = ["bg-gradient-to-r", "from-orange-500", "to-amber-400", "text-black"];
+    const oddiyKlass = ["text-gray-300", "hover:text-white"];
+
+    tugmalar.forEach(function (tugma) {
+      tugma.addEventListener("click", function () {
+
+        // 1) Hamma tugmani oddiy holatga qaytaramiz
+        tugmalar.forEach(function (t) {
+          t.classList.remove(...aktivKlass);
+          t.classList.add(...oddiyKlass);
+        });
+
+        // 2) Hamma panelni yashiramiz
+        panellar.forEach(function (p) {
+          p.classList.add("hidden");
+        });
+
+        // 3) Bosilgan tugmani aktiv qilamiz
+        tugma.classList.remove(...oddiyKlass);
+        tugma.classList.add(...aktivKlass);
+
+        // 4) Mos panelni ko'rsatamiz (data-tab qiymati panel id si bilan bir xil)
+        document.getElementById(tugma.dataset.tab).classList.remove("hidden");
+      });
+    });
+  </script>
+
+
+  <!-- Afzalliklar -->
+  <section class="py-16">
+    <div class="mx-auto w-full max-w-6xl px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <svg class="h-6 w-6 text-oltin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        <h3 class="mt-5 font-serif text-lg text-white">O'tin pechi</h3>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Bizning maxsus tosh o'chog'imizda an'anaviy usullar zamonaviy nafosat bilan uchrashadi.</p>
+      </div>
+      <div>
+        <svg class="h-6 w-6 text-oltin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        <h3 class="mt-5 font-serif text-lg text-white">Halol manbalar</h3>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Mahalliy yetkazib beruvchilar va barqaror meros fermer xo'jaliklari bilan bevosita hamkorlik.</p>
+      </div>
+      <div>
+        <svg class="h-6 w-6 text-oltin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg>
+        <h3 class="mt-5 font-serif text-lg text-white">Saralangan yerto'la</h3>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Noyob yillardagi vinolardan tortib, avangard tabiiy vinolargacha 400 dan ortiq turlar.</p>
+      </div>
+      <div>
+        <svg class="h-6 w-6 text-oltin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3 class="mt-5 font-serif text-lg text-white">Hissiyotlar teatri</h3>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Har bir tuyg'uni kuchaytirish uchun mo'ljallangan immersiv ovqatlanish muhiti.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video banner -->
+  <section class="relative flex h-80 items-center justify-center overflow-hidden bg-stone-900 md:h-[28rem]">
+
+    <img src="images/banner.jpg" alt="Ish jarayonidagi oshxona" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <!-- Play tugmasi. Video havolasini href ga yozing -->
+    <a href="#" class="relative z-10 flex flex-col items-center gap-4" aria-label="Videoni ko'rish">
+      <span class="flex h-16 w-16 items-center justify-center rounded-full bg-black/50 backdrop-blur hover:bg-black/70">
+        <svg class="ml-1 h-5 w-5 text-oltin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 4v16l13-8z"/>
+        </svg>
+      </span>
+      <span class="text-[11px] font-medium uppercase tracking-[0.3em] text-oltin">Ritualni tomosha qiling</span>
+    </a>
+  </section>
+
+  <!-- Mehmonlar sharhlari -->
+  <section id="sharhlar" class="py-20">
+    <div class="mx-auto w-full max-w-6xl px-6">
+
+      <div class="text-center">
+        <p class="text-xs font-medium uppercase tracking-wider text-oltin">Mehmonlar hikoyalari</p>
+        <h2 class="mt-3 font-serif text-4xl font-medium text-white md:text-5xl">Zulmatdan sado</h2>
+      </div>
+
+      <div class="mt-12 grid items-center gap-6 md:grid-cols-3">
+        <figure class="rounded-xl border bg-karta p-8 border-stone-800">
+          <p class="text-lg tracking-widest text-oltin" aria-label="5 yulduz">★★★★★</p>
+          <blockquote class="mt-5 font-serif text-sm italic leading-relaxed text-stone-300">&quot;Buni tasvirlashning eng yaxshi usuli - oshpazlik teatri. O'tin olovi hidi va za'faronli taomlar ta'mi hayratlanarli darajada ajoyib.&quot;</blockquote>
+          <figcaption class="mt-5 text-xs uppercase text-stone-500">— Eleanor Rigby, Vogue</figcaption>
+        </figure>
+        <figure class="rounded-xl border bg-karta p-8 border-oltin/30 md:py-10">
+          <p class="text-lg tracking-widest text-oltin" aria-label="5 yulduz">★★★★★</p>
+          <blockquote class="mt-5 font-serif text-sm italic leading-relaxed text-stone-300">&quot;Atmosfera menyu kabi sinchiklab ishlab chiqilgan noyob joy. Sakkizoyoq men istalgan Michelin yulduzli muassasada tatib ko'rganlarimning eng yaxshisi edi.&quot;</blockquote>
+          <figcaption class="mt-5 text-xs uppercase text-stone-500">— Julian Casablancas</figcaption>
+        </figure>
+        <figure class="rounded-xl border bg-karta p-8 border-stone-800">
+          <p class="text-lg tracking-widest text-oltin" aria-label="5 yulduz">★★★★★</p>
+          <blockquote class="mt-5 font-serif text-sm italic leading-relaxed text-stone-300">&quot;Saffron & Ember nafaqat kechki ovqat, balki xotiradir. Yorug'lik va sukunatga bo'lgan e'tibor har bir luqmani unutilmas qiladi.&quot;</blockquote>
+          <figcaption class="mt-5 text-xs uppercase text-stone-500">— Sarah Jenkins, Food & Wine</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Savollar -->
+  <section id="savollar" class="py-20">
+    <div class="mx-auto w-full max-w-3xl px-6">
+      <h2 class="text-center font-serif text-3xl font-medium text-white">Savollar</h2>
+      <div class="mt-10">
+      <details class="group border-b border-stone-800/70 py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium text-white [&::-webkit-details-marker]:hidden">
+          Sizda vegetarian yoki vegan variantlari bormi?
+          <svg class="h-4 w-4 shrink-0 text-oltin transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Ha. Menyuda vegetarian va vegan taomlar bor, oshpazlarimiz ularni alohida tayyorlaydi. Band qilayotganda ofitsiantga ayting, yetarli.</p>
+      </details>
+      <details class="group border-b border-stone-800/70 py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium text-white [&::-webkit-details-marker]:hidden">
+          Sizning band qilish siyosatingiz qanday?
+          <svg class="h-4 w-4 shrink-0 text-oltin transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Stolni 30 kun oldindan band qilish mumkin. Bekor qilish yoki vaqtni o'zgartirish uchun kamida 24 soat oldin xabar bering.</p>
+      </details>
+      <details class="group border-b border-stone-800/70 py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium text-white [&::-webkit-details-marker]:hidden">
+          Maxsus kiyim kodi bormi?
+          <svg class="h-4 w-4 shrink-0 text-oltin transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <p class="mt-3 text-sm leading-relaxed text-stone-500">Qat'iy kiyim kodi yo'q. Biz shinam va chiroyli kiyimni tavsiya qilamiz, ammo eng muhimi, o'zingizni qulay his qilishingiz.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galereya -->
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galereya</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind ga rang va animatsiya qo'shamiz -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fon: '#131110',
+          },
+          // "surilish" animatsiyasi: qatorni chapga siljitadi
+          keyframes: {
+            surilish: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+          },
+          animation: {
+            // 40 soniyada bir aylanadi, to'xtamasdan, bir tekis
+            surilish: 'surilish 40s linear infinite',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+
+  <!-- Tashqi quti: ichidan chiqib ketgan rasmlarni yashiradi -->
+  <section class="overflow-hidden">
+
+    <!-- Rasmlar qatori. Sichqoncha ustiga kelsa, to'xtaydi -->
+    <div class="flex w-max animate-surilish hover:[animation-play-state:paused] motion-reduce:animate-none">
+
+      <!-- ===== 1-to'plam (6 ta rasm) ===== -->
+      <img src="./img/Container (7).png" alt="Apelsin po'stlog'i bilan kokteyl"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (8).png" alt="Tutun ichidagi mevali desert"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (9).png" alt="Yonib turgan g'ishtin o'choq"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (10).png" alt="Kechki ovqatda qadah ko'tarayotgan juftlik"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (11).png" alt="Za'faron tolalari"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (12).png" alt="Restoran kirish eshigi"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+
+      <!-- ===== 2-to'plam (xuddi shu rasmlarning nusxasi) =====
+           Nusxa kerak, chunki birinchi to'plam chiqib ketganda
+           ikkinchisi o'rniga kelib, aylanish uzilmay ko'rinadi -->
+      <img src="./img/Container (6).png" alt="" aria-hidden="true"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (7).png" alt="" aria-hidden="true"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (8).png" alt="" aria-hidden="true"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (9).png" alt="" aria-hidden="true"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (10).png" alt="" aria-hidden="true"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+      <img src="./img/Container (11).png" alt="" aria-hidden="true"
+        class="w-72 h-72 md:w-80 md:h-80 object-cover shrink-0 bg-neutral-800" />
+
+    </div>
+  </section>
+
+
+
+  <!-- Stol band qilish -->
+  <section id="bron" class="py-20">
+    <div class="mx-auto w-full max-w-6xl px-6">
+      <div class="grid gap-10 rounded-2xl border border-stone-800 bg-karta p-8 md:grid-cols-2 md:items-center md:p-12">
+
+        <!-- Chap: matn -->
+        <div>
+          <p class="text-xs font-medium uppercase tracking-wider text-oltin">Stolingizni band qiling</p>
+          <h2 class="mt-4 font-serif text-4xl font-medium leading-tight text-white md:text-5xl">Zulmatda bir stol sizni kutmoqda</h2>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-stone-400">
+            Hissiy tatib ko'rish menyusi orqali sayohatingizni ta'minlang. Har kecha cheklangan o'rinlar mavjud.
+          </p>
+          <a href="tel:+15550987347" class="mt-6 inline-flex items-center gap-3 font-serif text-oltin hover:text-white">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            +1 (555) 098-FIRE
+          </a>
+        </div>
+
+        <!-- O'ng: forma -->
+        <form action="#" method="post" class="space-y-5">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="sana" class="mb-2 block text-[10px] uppercase tracking-wider text-stone-500">Sana</label>
+              <input id="sana" type="date" class="w-full rounded-lg border border-stone-800 bg-fon px-4 py-3.5 text-sm text-stone-200 placeholder-stone-500 focus:border-oltin focus:outline-none" />
+            </div>
+            <div>
+              <label for="mehmon" class="mb-2 block text-[10px] uppercase tracking-wider text-stone-500">Mehmonlar</label>
+              <select id="mehmon" class="w-full rounded-lg border border-stone-800 bg-fon px-4 py-3.5 text-sm text-stone-200 placeholder-stone-500 focus:border-oltin focus:outline-none"><option>1 kishi</option><option>2 kishi</option><option>3 kishi</option><option>4 kishi</option><option>5 kishi</option><option>6 kishi</option><option>7 kishi</option><option>8 kishi</option></select>
+            </div>
+          </div>
+          <div>
+            <label for="email" class="mb-2 block text-[10px] uppercase tracking-wider text-stone-500">Email manzili</label>
+            <input id="email" type="email" placeholder="Sizning email manzilingiz" class="w-full rounded-lg border border-stone-800 bg-fon px-4 py-3.5 text-sm text-stone-200 placeholder-stone-500 focus:border-oltin focus:outline-none" />
+          </div>
+         <a href="./manzilar.html"> <button type="submit" class="w-full rounded-full bg-gradient-to-r from-orange-500 to-amber-400 py-3.5 text-sm font-semibold text-black">
+            Hozir band qilish &rarr;
+          </button></a>
+          <p class="text-center text-[10px] text-stone-500">Band qilish orqali siz bizning 48 soatlik bekor qilish siyosatimizga rozilik bildirasiz.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-900 pt-16">
+    <div class="mx-auto w-full max-w-6xl px-6">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div>
+          <p class="font-serif text-2xl font-medium text-oltin">Saffron & Ember</p>
+          <p class="mt-4 max-w-[14rem] text-sm leading-relaxed text-stone-400">Kinematografik nuar gastronomiyasi. Olov va atmosfera mahorati.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-wider text-white">Tadqiq eting</h3>
+          <ul class="mt-5 space-y-4 text-sm text-stone-500">
+            <li><a href="#menyu" class="hover:text-white">Bizning menyular</a></li>
+            <li><a href="#tajriba" class="hover:text-white">Oshxona</a></li>
+            <li><a href="#bron" class="hover:text-white">Xususiy tadbirlar</a></li>
+            <li><a href="#" class="hover:text-white">Yerto'la ro'yxati</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-wider text-white">Tashrif buyuring</h3>
+          <address class="mt-5 text-sm not-italic leading-relaxed text-stone-500">
+            1248 Obsidian Avenue<br />London, EC1A 4BB
+          </address>
+          <p class="mt-4 text-sm text-stone-500">Sek - Shan: 18:00 - 23:00</p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-wider text-white">Kuzating</h3>
+          <div class="mt-5 flex gap-3">
+            <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-800 text-stone-300 hover:border-oltin hover:text-oltin" aria-label="Veb-sayt">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </a>
+            <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-800 text-stone-300 hover:border-oltin hover:text-oltin" aria-label="Instagram">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-14 flex flex-col items-center justify-between gap-3 border-t border-stone-900 py-6 text-xs text-stone-500 md:flex-row">
+        <p>&copy; 2024 Saffron & Ember. Kinematografik nuar gastronomiyasi.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white">Maxfiylik siyosati</a>
+          <a href="#" class="hover:text-white">Xizmat ko'rsatish shartlari</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

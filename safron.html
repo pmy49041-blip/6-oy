@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saffron &amp; Ember</title>
+
+  <!-- Shriftlar: sarlavha uchun Playfair Display, matn uchun Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    // Butun sayt uchun BIR XIL ranglar va shriftlar shu yerda
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fon: '#0a0a0b',      // asosiy fon
+            panel: '#131316',    // kartalar foni
+            oltin: '#e8b95a',    // asosiy urg'u rangi
+            matn: '#f2ede4',     // asosiy matn
+            xira: '#8a857b'      // ikkinchi darajali matn
+          },
+          fontFamily: {
+            sarlavha: ['"Playfair Display"', 'serif'],
+            matn: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-fon text-matn font-matn">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-fon/90 backdrop-blur border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-sarlavha text-xl text-oltin">Saffron &amp; Ember</a>
+
+      <ul class="hidden md:flex gap-8 text-sm text-xira">
+        <li><a href="#menyu" class="hover:text-oltin">Menyu</a></li>
+        <li><a href="#tajriba" class="hover:text-oltin">Tajriba</a></li>
+        <li><a href="#oshpazlar" class="text-oltin border-b border-oltin pb-1">Oshpazlar</a></li>
+        <li><a href="#master-klass" class="hover:text-oltin">Master-klass</a></li>
+        <li><a href="./manzilar.html" class="hover:text-oltin">Manzilar</a></li>
+      </ul>
+
+      <a href="#band" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">
+        Stol band qilish
+      </a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative">
+    <img src="./img/Image (26).png" alt="Oshpaz olov ustida taom tayyorlamoqda"
+         class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="relative max-w-3xl mx-auto px-6 py-32 md:py-44 text-center">
+      <h1 class="font-sarlavha text-5xl md:text-7xl">Lazzat ortidagi ustalar</h1>
+      <p class="mt-6 text-matn/80 leading-relaxed">
+        Qadimiy uslublar zamonaviy innovatsiyalar bilan uchrashadigan maskan.
+        Sayohatining har bir lahzasini mahorat bilan boshqarayotgan ijodkorlar bilan tanishing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= BOSH OSHPAZ ================= -->
+  <section id="oshpazlar" class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+    <img src="./img/Image (27).png" alt="Chef Julian Saint-Clair"
+         class="w-full rounded-2xl border border-white/10 object-cover">
+
+    <div>
+      <p class="text-oltin text-sm">Bosh oshpaz</p>
+      <h2 class="font-sarlavha text-4xl md:text-5xl mt-2">Julian Saint-Clair</h2>
+      <p class="mt-6 text-matn/80 leading-relaxed">
+        Uchta qit'ada faoliyat yuritgan Chef Julian Saffron &amp; Ember ga "Atmosferik Gastronomiya"
+        falsafasini olib kirdi. Uning yondashuvi tarelkani xotiralar tuvalidek ko'radi, u yerda
+        tutun, olov va noyob ziravorlar chuqur hissiy rezonans uyg'otadi.
+      </p>
+
+      <!-- Statistika -->
+      <div class="mt-8 py-6 border-y border-white/10 grid grid-cols-3 gap-4">
+        <div>
+          <p class="font-sarlavha text-2xl text-oltin">28</p>
+          <p class="text-xs text-xira mt-1">Yillik tajriba</p>
+        </div>
+        <div>
+          <p class="font-sarlavha text-2xl text-oltin">3</p>
+          <p class="text-xs text-xira mt-1">Xalqaro mukofot</p>
+        </div>
+        <div>
+          <p class="font-sarlavha text-2xl text-oltin">40+</p>
+          <p class="text-xs text-xira mt-1">Mualliflik taomi</p>
+        </div>
+      </div>
+
+      <ul class="mt-6 space-y-2 text-sm text-matn/80">
+        <li>Michelin yulduzi g'olibi (2020-2023)</li>
+        <li>Yilning oshpazlik innovatori</li>
+      </ul>
+
+      <a href="#band" class="inline-block mt-8 rounded-full border border-oltin text-oltin text-sm px-6 py-3 hover:bg-oltin hover:text-fon">
+        Oshpaz stolini band qilish
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= BRIGADA ================= -->
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="text-center">
+      <p class="text-oltin text-sm">Brigada</p>
+      <h2 class="font-sarlavha text-3xl md:text-4xl mt-2">Texnika ustalari</h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Karta 1 -->
+      <article class="bg-panel border border-white/10 rounded-2xl overflow-hidden">
+        <img src="./img/Image (28).png" alt="Elena Moretti" class="w-full h-72 object-cover">
+        <div class="p-4">
+          <h3 class="font-sarlavha text-lg">Elena Moretti</h3>
+          <p class="text-xs text-xira mt-1">Su-shef</p>
+        </div>
+      </article>
+
+      <!-- Karta 2 -->
+      <article class="bg-panel border border-white/10 rounded-2xl overflow-hidden">
+        <img src="./img/Image (29).png" alt="Marcus Vane" class="w-full h-72 object-cover">
+        <div class="p-4">
+          <h3 class="font-sarlavha text-lg">Marcus Vane</h3>
+          <p class="text-xs text-xira mt-1">Kuxnya shefi</p>
+        </div>
+      </article>
+
+      <!-- Karta 3 -->
+      <article class="bg-panel border border-white/10 rounded-2xl overflow-hidden">
+        <img src="./img/Image (30).png" alt="Sophia Chen" class="w-full h-72 object-cover">
+        <div class="p-4">
+          <h3 class="font-sarlavha text-lg">Sophia Chen</h3>
+          <p class="text-xs text-xira mt-1">Qandolat bo'limi shefi</p>
+        </div>
+      </article>
+
+      <!-- Karta 4 -->
+      <article class="bg-panel border border-white/10 rounded-2xl overflow-hidden">
+        <img src="./img/Image (31).png" alt="Laurent Blanc" class="w-full h-72 object-cover">
+        <div class="p-4">
+          <h3 class="font-sarlavha text-lg">Laurent Blanc</h3>
+          <p class="text-xs text-xira mt-1">Bosh somelye</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= IQTIBOS ================= -->
+  <section class="relative">
+    <img src="./img/Image (32).png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30">
+    <div class="relative max-w-3xl mx-auto px-6 py-28 text-center">
+      <blockquote class="font-sarlavha italic text-3xl md:text-4xl leading-snug">
+        "Biz ovqat pishirmaymiz. Biz xotiralar yaratamiz."
+      </blockquote>
+      <p class="mt-6 text-oltin text-sm">Bosh oshpaz Julian Saint-Clair</p>
+    </div>
+  </section>
+
+  <!-- ================= ISH VAQTI + IYERARXIYA ================= -->
+  <section id="tajriba" class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12">
+
+    <!-- Ish vaqti -->
+    <div class="bg-panel border border-white/10 rounded-2xl p-8">
+      <h2 class="font-sarlavha text-xl">Oshxona xizmati</h2>
+
+      <ul class="mt-6 space-y-3 text-sm">
+        <li class="flex justify-between px-4 py-3">
+          <span>Dushanba — Chorshanba</span><span class="text-xira">17:00 — 23:00</span>
+        </li>
+        <!-- Bugungi kun ajratib ko'rsatilgan -->
+        <li class="flex justify-between px-4 py-3 rounded-xl border border-oltin text-oltin">
+          <span>Payshanba (Bugun)</span><span>17:00 — 00:00</span>
+        </li>
+        <li class="flex justify-between px-4 py-3">
+          <span>Juma — Shanba</span><span class="text-xira">12:00 — 01:00</span>
+        </li>
+        <li class="flex justify-between px-4 py-3">
+          <span>Yakshanba</span><span class="text-xira">11:00 — 21:00</span>
+        </li>
+      </ul>
+
+      <div class="mt-6 pt-6 border-t border-white/10 grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <p class="text-oltin">Oshpaz stoli</p>
+          <p class="text-xira text-xs mt-1">Faqat Chorshanba va Shanba</p>
+        </div>
+        <div>
+          <p class="text-oltin">Master-klasslar</p>
+          <p class="text-xira text-xs mt-1">Har Yakshanba tongda</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iyerarxiya (bu haqiqiy ketma-ketlik, shuning uchun raqamlar to'g'ri) -->
+    <div>
+      <h2 class="font-sarlavha text-xl">Iyerarxiya</h2>
+
+      <ol class="mt-6 space-y-6 border-l border-white/10 pl-6">
+        <li>
+          <p class="text-oltin font-semibold">1. Bosh oshpaz</p>
+          <p class="text-xira text-xs mt-1">G'oya muallifi va ijodiy direktor</p>
+        </li>
+        <li>
+          <p class="font-semibold">2. Su-shef</p>
+          <p class="text-xira text-xs mt-1">Operatsion boshqaruv va sifat</p>
+        </li>
+        <li>
+          <p class="font-semibold">3. Bo'lim oshpazi</p>
+          <p class="text-xira text-xs mt-1">Stansiya ustalari (Gril, Sautye, Baliq)</p>
+        </li>
+        <li>
+          <p class="font-semibold">4. Yordamchi oshpaz</p>
+          <p class="text-xira text-xs mt-1">Kelajak yulduzlari va ko'makchilar</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= MASTER-KLASS ================= -->
+  <section id="master-klass" class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="bg-panel border border-white/10 rounded-2xl overflow-hidden grid md:grid-cols-2">
+      <img src="./img/Image (33).png" alt="Master-klass" class="w-full h-full object-cover">
+
+      <div class="p-8 md:p-10">
+        <div class="flex items-center justify-between">
+          <p class="text-oltin text-sm">Kelgusi tajriba</p>
+          <span class="text-xs text-oltin border border-oltin/40 rounded-full px-3 py-1">4 ta joy qoldi</span>
+        </div>
+
+        <h2 class="font-sarlavha text-2xl md:text-3xl mt-4">Saffron Secrets: Ochiq olov master-klassi</h2>
+        <p class="mt-4 text-matn/80 leading-relaxed">
+          Chef Julian bilan birga tutun kimyosini va Eron za'faronining nozik muvozanatini
+          o'rganish uchun 3 soatlik sayohatga qo'shiling.
+        </p>
+
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs text-xira">Sana</p>
+            <p class="font-semibold mt-1">24-oktabr, 2024</p>
+          </div>
+          <div>
+            <p class="text-xs text-xira">Narxi</p>
+            <p class="font-semibold text-oltin mt-1">$285 / Kishiga</p>
+          </div>
+        </div>
+
+        <a href="#band" class="block text-center mt-8 rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon font-semibold px-6 py-4">
+          Master-klassga yozilish
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALEREYA ================= -->
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="text-center">
+      <p class="text-oltin text-sm">Sahn ortida</p>
+      <h2 class="font-sarlavha text-3xl md:text-4xl mt-2">Yaratilish lahzalari</h2>
+    </div>
+
+    <!-- Hamma rasm bir xil kattalikda -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="./img/Image (34).png" alt="Za'faron qovurilmoqda" class="w-full h-64 object-cover rounded-2xl border border-white/10">
+      <img src="./img/Image (35).png" alt="Oshxona jamoasi ish joyida" class="w-full h-64 object-cover rounded-2xl border border-white/10">
+      <img src="./img/Image (36).png" alt="Mis idishlar" class="w-full h-64 object-cover rounded-2xl border border-white/10">
+      <img src="./img/Image (37).png" alt="Taomga so'nggi teginish" class="w-full h-64 object-cover rounded-2xl border border-white/10">
+      <img src="./img/Image (38).png" alt="Olovdagi gril" class="w-full h-64 object-cover rounded-2xl border border-white/10">
+      <img src="./img/Image (39).png" alt="Eski retseptlar daftari" class="w-full h-64 object-cover rounded-2xl border border-white/10">
+    </div>
+  </section>
+
+  <!-- ================= BAND QILISH ================= -->
+  <section id="band" class="max-w-3xl mx-auto px-6 pb-24 text-center">
+    <h2 class="font-sarlavha text-3xl md:text-4xl">Stolingizni band qiling</h2>
+    <p class="mt-4 text-matn/80">Oshpaz stoli va oddiy stollar uchun joylar cheklangan.</p>
+    <a href="tel:+998000000000" class="inline-block mt-8 rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon font-semibold px-8 py-4">
+      Stol band qilish
+    </a>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+      <div>
+        <a href="#" class="font-sarlavha text-2xl text-oltin">Saffron &amp; Ember</a>
+        <p class="mt-3 text-xs text-xira">© 2024 Saffron &amp; Ember. Pazandachilik mahorati qayta talqin qilindi.</p>
+      </div>
+
+      <ul class="flex flex-wrap gap-6 text-sm text-xira">
+        <li><a href="#" class="hover:text-oltin">Maxfiylik siyosati</a></li>
+        <li><a href="#" class="hover:text-oltin">Xizmat ko'rsatish shartlari</a></li>
+        <li><a href="#" class="hover:text-oltin">Karyera</a></li>
+        <li><a href="#" class="hover:text-oltin">Matbuot to'plami</a></li>
+        <li><a href="#" class="hover:text-oltin">Aloqa</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

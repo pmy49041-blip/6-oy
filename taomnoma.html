@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Saffron &amp; Ember — Taomnoma</title>
+
+  <!-- Tailwind CSS (CDN orqali, style.css kerak emas) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    // Rang va shriftlarni bir marta e'lon qilamiz, keyin klass sifatida ishlatamiz
+    tailwind.config = {
+      theme: { extend: {
+        colors: { gold: '#d4a84b', ink: '#0b0b0d', panel: '#141417' },
+        fontFamily: { display: ['"Playfair Display"', 'Georgia', 'serif'] }
+      } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<!-- Hamma bo'limda bir xil konteyner: "max-w-6xl mx-auto px-6" -->
+<body class="bg-ink text-[#e9e4d8] font-serif" style="color-scheme:dark">
+
+  <!-- ===== NAVIGATSIYA ===== -->
+  <header class="border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-display text-xl">Saffron &amp; Ember</a>
+      <nav class="hidden md:flex gap-8 text-sm">
+        <a href="#" class="hover:text-gold">Bosh sahifa</a>
+        <a href="#" class="text-gold border-b border-gold pb-1">Taomnoma</a>
+        <a href="#" class="hover:text-gold">Xizmatlar</a>
+        <a href="./safron.html" class="hover:text-gold">Oshpazlar</a>
+        <a href="./manzilar.html" class="hover:text-gold">Manzillar</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+998900000000" aria-label="Qo'ng'iroq qilish">📞</a>
+        <a href="#" class="bg-gold text-black text-sm font-bold px-5 py-2 rounded-full hover:opacity-90">Stol band qilish</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative h-[28rem] md:h-[36rem] flex items-center justify-center text-center">
+    <img src="images/hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative px-6">
+      <p class="text-[11px] tracking-widest uppercase text-gold mb-4">Bosh sahifa / Taomnoma</p>
+      <h1 class="font-display text-6xl md:text-8xl leading-none">Bizning<br />Taomnoma</h1>
+      <p class="italic text-white/60 mt-5">Olov qalbida har kuni tayyorlanadigan lazzatlar simfoniyasi.</p>
+    </div>
+  </section>
+
+  <!-- ===== FILTR PANELI ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center gap-4">
+    <div class="flex gap-3 overflow-x-auto">
+      <button class="bg-gold text-black text-sm font-bold px-6 py-2 rounded-full">Hammasi</button>
+      <button class="border border-white/15 text-sm px-5 py-2 rounded-full whitespace-nowrap hover:border-gold">Gazaklar</button>
+      <button class="border border-white/15 text-sm px-5 py-2 rounded-full whitespace-nowrap hover:border-gold">Sho'rvalar</button>
+      <button class="border border-white/15 text-sm px-5 py-2 rounded-full whitespace-nowrap hover:border-gold">Asosiy taomlar</button>
+      <button class="border border-white/15 text-sm px-5 py-2 rounded-full whitespace-nowrap hover:border-gold">Grill va Steak</button>
+    </div>
+    <div class="flex items-center gap-3 md:ml-auto">
+      <div class="flex items-center gap-2 border border-white/15 rounded-lg px-3 py-2 w-52">
+        <span>🔍</span>
+        <input type="text" placeholder="Taomni qidirish..." class="bg-transparent outline-none text-sm w-full placeholder:text-white/40" />
+      </div>
+      <div class="flex border border-white/15 rounded-lg p-1 text-gold">
+        <button class="px-2 py-1 bg-white/10 rounded" aria-label="To'r ko'rinish">▦</button>
+        <button class="px-2 py-1" aria-label="Ro'yxat ko'rinish">☰</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAOM KARTALARI ===== -->
+  <main class="max-w-6xl mx-auto px-6 py-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+    <article class="bg-panel border border-white/10 rounded-xl overflow-hidden">
+      <div class="relative">
+        <img src="./img/Cho'g'da pishgan losos.png" alt="Cho'g'da pishgan losos" class="w-full h-48 object-cover" />
+        <span class="absolute top-3 left-3 bg-gold text-black text-xs font-bold px-3 py-1 rounded-md">Shef tanlovi</span>
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-baseline gap-3">
+          <h2 class="font-display text-xl">Cho'g'da pishgan losos</h2>
+          <span class="font-display text-gold">$34</span>
+        </div>
+        <p class="text-sm text-white/60 mt-3 leading-relaxed">Asal-za'faronli sir, yovvoyi qo'ziqorinli rizotto, ko'mirda pishgan parhez kashnich</p>
+        <div class="flex items-center justify-between border-t border-white/10 mt-6 pt-4 text-xs text-white/60">
+          <span><span class="text-gold">◷</span> 25 daq</span>
+          <span class="mr-auto ml-4">🔥 480 kkal</span>
+          <button aria-label="Sevimlilarga qo'shish" class="text-lg hover:text-gold">♡</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="bg-panel border border-white/10 rounded-xl overflow-hidden">
+      <div class="relative">
+        <img src="./img/Saralangan sabzili assorti (1).png" alt="Saralangan sabzili assorti" class="w-full h-48 object-cover" />
+        <span class="absolute top-3 left-3 bg-[#6f8a7a] text-white text-xs font-bold px-3 py-1 rounded-md">Vegan</span>
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-baseline gap-3">
+          <h2 class="font-display text-xl">Saralangan sabzili assorti</h2>
+          <span class="font-display text-gold">$18</span>
+        </div>
+        <p class="text-sm text-white/60 mt-3 leading-relaxed">Sekin qovurilgan saralangan sabzilar, anorli gastrik, qovurilgan urug'lar va ...</p>
+        <div class="flex items-center justify-between border-t border-white/10 mt-6 pt-4 text-xs text-white/60">
+          <span><span class="text-gold">◷</span> 15 daq</span>
+          <span class="mr-auto ml-4">🔥 220 kkal</span>
+          <button aria-label="Sevimlilarga qo'shish" class="text-lg hover:text-gold">♡</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="bg-panel border border-white/10 rounded-xl overflow-hidden">
+      <div class="relative">
+        <img src="./img/Cho'g'da pishgan Vagyū filatosi.png" alt="Cho'g'da pishgan Vagyū filatosi" class="w-full h-48 object-cover" />
+        <span class="absolute top-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-md">Premium</span>
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-baseline gap-3">
+          <h2 class="font-display text-xl">Cho'g'da pishgan Vagyū filatosi</h2>
+          <span class="font-display text-gold">$62</span>
+        </div>
+        <p class="text-sm text-white/60 mt-3 leading-relaxed">8 unsiya Vagyū filatosi, qush ko'zi qalampiri saryog'i, truffel pyuresi va qizil</p>
+        <div class="flex items-center justify-between border-t border-white/10 mt-6 pt-4 text-xs text-white/60">
+          <span><span class="text-gold">◷</span> 35 daq</span>
+          <span class="mr-auto ml-4">🔥 720 kkal</span>
+          <button aria-label="Sevimlilarga qo'shish" class="text-lg hover:text-gold">♡</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== DEGUSTATSIYA ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-10">
+    <div class="relative rounded-2xl overflow-hidden border border-white/10">
+      <img src="./img/Image (25).png" alt="" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/60"></div>
+      <!-- tillarang ichki ramka -->
+      <div class="absolute inset-3 md:inset-4 border border-gold/50 rounded-xl pointer-events-none"></div>
+
+      <div class="relative grid md:grid-cols-2 gap-10 items-center p-8 md:p-16">
+        <div>
+          <p class="text-xs tracking-widest uppercase text-gold mb-4">Ekskluziv tajriba</p>
+          <h2 class="font-display text-4xl md:text-5xl mb-5">O'choq sayohati</h2>
+          <p class="text-white/60 leading-relaxed mb-8">Bizning mualliflik 7-kursli mavsumiy degustatsiya taomnomasimiz, tabiatimiz tarixini olov va ziravorlar orqali hikoya qiladi.</p>
+          <a href="#" class="inline-block bg-gold text-black text-sm font-bold px-8 py-4 rounded-full shadow-lg shadow-gold/30 hover:opacity-90">Degustatsiya band qilish — $145</a>
+        </div>
+
+        <ol class="bg-black/50 border border-white/10 rounded-xl px-6 text-sm font-bold">
+          <li class="flex justify-between py-4 border-b border-white/10"><span>I. Amuse-Bouche: Za'faron marvaridi</span><span class="text-gold">☆</span></li>
+          <li class="py-4 border-b border-white/10">II. Dudlangan dengiz taroqchasi</li>
+          <li class="py-4 border-b border-white/10">III. Cho'g'da qovurilgan ildizpoya sho'rvasi</li>
+          <li class="py-4 border-b border-white/10">IV. Anjir bilan tovada pishirilgan bedana</li>
+          <li class="py-4 border-b border-white/10">V. Qora truffel bilan Vagyū</li>
+          <li class="py-4 border-b border-white/10">VI. Ta'm yangilovchi: Rayhonli sorbet</li>
+          <li class="py-4">VII. Dekonstruksiya qilingan asalari uyasi</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VINOLAR VA KOKTEYLLAR ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex items-baseline justify-between mb-8">
+      <h2 class="font-display text-3xl md:text-4xl">Vinolar va Kokteyllar</h2>
+      <a href="#" class="text-sm text-gold font-bold">To'liq to'plamni ko'rish</a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-5">
+      <div>
+        <div class="relative h-64 bg-panel border border-white/10 rounded-xl flex items-center justify-center">
+          <img src="./img/Wine Bottle.png" alt="Château Ember Rouge" class="w-3/4 rounded" />
+          <span class="absolute bottom-4 text-[10px] tracking-wider uppercase text-gold border border-gold/40 rounded px-3 py-1">Vintage 2018</span>
+        </div>
+        <h3 class="text-sm font-bold mt-4">Château Ember Rouge</h3>
+        <p class="text-xs text-white/50 mt-1">Bordo, Fransiya</p>
+      </div>
+      <div>
+        <div class="h-64 bg-panel border border-white/10 rounded-xl flex items-center justify-center">
+          <img src="./img/Saffron Negroni.png" alt="Saffron Negroni" class="w-3/4 rounded" />
+        </div>
+        <h3 class="text-sm font-bold mt-4">Saffron Negroni</h3>
+        <p class="text-xs text-white/50 mt-1">Xonadon damlamasi</p>
+      </div>
+      <div>
+        <div class="relative h-64 bg-panel border border-white/10 rounded-xl flex items-center justify-center">
+          <img src="./img/Golden Saffron Brut.png" alt="Golden Saffron Brut" class="w-3/4 rounded" />
+          <span class="absolute bottom-4 text-[10px] tracking-wider uppercase text-gold border border-gold/40 rounded px-3 py-1">Vintage 2021</span>
+        </div>
+        <h3 class="text-sm font-bold mt-4">Golden Saffron Brut</h3>
+        <p class="text-xs text-white/50 mt-1">Napa vodiysi, AQSH</p>
+      </div>
+      <div>
+        <div class="h-64 bg-panel border border-white/10 rounded-xl flex items-center justify-center text-5xl">🥃</div>
+        <h3 class="text-sm font-bold mt-4">Smoked Old Fashioned</h3>
+        <p class="text-xs text-white/50 mt-1">Bochkada saqlangan</p>
+      </div>
+      <div>
+        <div class="h-64 bg-panel border border-white/10 rounded-xl flex items-center justify-center">
+          <img src="./img/Rosé.png" alt="Provence Rosé" class="w-3/4 rounded" />
+        </div>
+        <h3 class="text-sm font-bold mt-4">Provence Rosé</h3>
+        <p class="text-xs text-white/50 mt-1">Provans, Fransiya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BELGILAR QATORI ===== -->
+  <section class="bg-white/[0.03] border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap justify-center gap-x-10 gap-y-4 text-[11px] tracking-widest uppercase text-white/60">
+      <span class="flex items-center gap-3"><b class="w-7 h-7 rounded-full bg-[#8fa89a] text-black text-[10px] flex items-center justify-center">V</b>Vegan</span>
+      <span class="flex items-center gap-3"><b class="w-7 h-7 rounded-full bg-gold text-black text-[10px] flex items-center justify-center">GF</b>Glyutensiz</span>
+      <span class="flex items-center gap-3"><b class="w-7 h-7 rounded-full bg-white/10 text-white text-[10px] flex items-center justify-center">N</b>Yong'oqli</span>
+      <span class="flex items-center gap-3"><span class="w-7 h-7 flex items-center justify-center">🌶</span>Achchiq mualliflik</span>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="relative overflow-hidden max-w-4xl mx-auto rounded-2xl border border-white/10 bg-[#1b1b1f] text-center px-6 py-14">
+      <!-- bezak doiralar -->
+      <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5"></div>
+      <div class="absolute -bottom-12 -left-10 w-40 h-40 rounded-full bg-white/5"></div>
+      <div class="relative">
+        <h2 class="font-display text-3xl md:text-5xl mb-5">Qaror qabul qila olmayapsizmi?</h2>
+        <p class="text-white/50 max-w-md mx-auto mb-8 leading-relaxed">Bizning bosh oshpazimizga sizning didingizga va oqshom kayfiyatiga mos keladigan maxsus oshpazlik sayohatini yaratishga imkon bering.</p>
+        <a href="#" class="inline-block bg-gold text-black text-sm font-bold px-8 py-4 rounded-full shadow-lg shadow-gold/20 hover:opacity-90">Oshpaz stolini band qilish 🍴</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-4 text-sm">
+      <div>
+        <p class="font-display text-2xl text-gold mb-5">Saffron &amp; Ember</p>
+        <p class="text-white/60 leading-relaxed">2018 yildan buyon lazzat va olovning birlamchi muloqoti orqali unutilmas hikoyalarni yaratmoqdamiz.</p>
+      </div>
+      <div>
+        <p class="text-xs tracking-widest uppercase text-gold font-bold mb-5">O'rganish</p>
+        <ul class="space-y-3 text-xs text-white/70">
+          <li><a href="#" class="hover:text-gold">Bizning tariximiz</a></li>
+          <li><a href="#" class="text-gold underline">Taomnoma</a></li>
+          <li><a href="#" class="hover:text-gold">Bron qilish</a></li>
+          <li><a href="#" class="hover:text-gold">Hadya sertifikatlari</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs tracking-widest uppercase text-gold font-bold mb-5">Huquqiy</p>
+        <ul class="space-y-3 text-xs text-white/70">
+          <li><a href="#" class="hover:text-gold">Maxfiylik siyosati</a></li>
+          <li><a href="#" class="hover:text-gold">Xizmat ko'rsatish shartlari</a></li>
+          <li><a href="#" class="hover:text-gold">Foydalanish imkoniyati</a></li>
+          <li><a href="#" class="hover:text-gold">Sayt xaritasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs tracking-widest uppercase text-gold font-bold mb-5">Biz bilan bog'laning</p>
+        <div class="flex gap-3 mb-5">
+          <a href="#" aria-label="Ulashish" class="w-10 h-10 rounded-full border border-white/15 bg-panel flex items-center justify-center">⤴</a>
+          <a href="#" aria-label="Xabar" class="w-10 h-10 rounded-full border border-white/15 bg-panel flex items-center justify-center">💬</a>
+        </div>
+        <p class="text-[10px] tracking-widest uppercase text-white/40 leading-relaxed">© 2024 Saffron &amp; Ember. Raqamli o'choq uchun yaratilgan.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manzillar — Saffron &amp; Ember</title>
+
+  <!-- Shriftlar: index.html bilan bir xil -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    // Ranglar va shriftlar index.html dagi bilan AYNAN bir xil
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fon: '#0a0a0b',
+            panel: '#131316',
+            oltin: '#e8b95a',
+            matn: '#f2ede4',
+            xira: '#8a857b'
+          },
+          fontFamily: {
+            sarlavha: ['"Playfair Display"', 'serif'],
+            matn: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-fon text-matn font-matn">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-fon/90 backdrop-blur border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-sarlavha text-xl text-oltin">Saffron &amp; Ember</a>
+
+      <ul class="hidden md:flex gap-8 text-sm text-xira">
+        <li><a href="index.html" class="hover:text-oltin">Bosh sahifa</a></li>
+        <li><a href="#" class="hover:text-oltin">Taomnoma</a></li>
+        <li><a href="index.html#oshpazlar" class="hover:text-oltin">Oshpazlar</a></li>
+        <li><a href="manzillar.html" class="text-oltin border-b border-oltin pb-1">Manzillar</a></li>
+      </ul>
+
+      <a href="#band" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">
+        Stol band qilish
+      </a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative">
+    <img src="./img/Image (40).png" alt="Kechki shahar manzarasi"
+         class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="relative max-w-3xl mx-auto px-6 py-32 md:py-44 text-center">
+      <h1 class="font-sarlavha text-5xl md:text-7xl">Bizni toping</h1>
+      <p class="mt-6 text-matn/80 leading-relaxed">Shaharning to'rt nuqtasidagi olov maskanlari</p>
+    </div>
+  </section>
+
+  <!-- ================= XARITA + RO'YXAT ================= -->
+  <section class="max-w-6xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-start">
+
+    <!-- Xarita -->
+    <div>
+      <img src="./img/xarita.png" alt="Maskanlar xaritasi"
+           class="w-full rounded-2xl border border-white/10 object-cover">
+
+      <div class="mt-6">
+        <h2 class="font-sarlavha text-xl">London, UK</h2>
+        <p class="text-xs text-xira mt-1">Markaziy tuman · Reyting 4.3</p>
+      </div>
+
+      <div class="mt-6 grid grid-cols-3 gap-4">
+        <div class="bg-panel border border-white/10 rounded-2xl p-4">
+          <p class="text-sm font-semibold">Soho</p>
+          <p class="text-xs text-xira mt-1">Ovqatlanish va tungi hayot</p>
+        </div>
+        <div class="bg-panel border border-white/10 rounded-2xl p-4">
+          <p class="text-sm font-semibold">Mayfair</p>
+          <p class="text-xs text-xira mt-1">Hashamatli do'konlar va mehmonxonalar</p>
+        </div>
+        <div class="bg-panel border border-white/10 rounded-2xl p-4">
+          <p class="text-sm font-semibold">Westminster</p>
+          <p class="text-xs text-xira mt-1">Tarix va diqqatga sazovor joylar</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maskanlar ro'yxati -->
+    <div class="space-y-6">
+
+      <article class="bg-panel border border-white/10 rounded-2xl p-6">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-sarlavha text-2xl">Shahar markazi</h3>
+          <span class="text-xs text-green-400 border border-green-400/40 rounded-full px-3 py-1 whitespace-nowrap">Hozir ochiq</span>
+        </div>
+        <p class="mt-3 text-sm text-xira leading-relaxed">Saffron &amp; Ember markazi. Bu yerda shahar energiyasi olovning tabiiy kuchi bilan uchrashadi.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">Yo'nalishlar</a>
+          <a href="#band" class="rounded-full border border-oltin text-oltin text-sm px-6 py-3 hover:bg-oltin hover:text-fon">Band qilish</a>
+        </div>
+      </article>
+
+      <article class="bg-panel border border-white/10 rounded-2xl p-6">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-sarlavha text-2xl">Sohil bo'yi</h3>
+          <span class="text-xs text-green-400 border border-green-400/40 rounded-full px-3 py-1 whitespace-nowrap">Hozir ochiq</span>
+        </div>
+        <p class="mt-3 text-sm text-xira leading-relaxed">Hayratlanarli manzara va sadr iforli cho'g'da pishirilgan dengiz mahsulotlari.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">Yo'nalishlar</a>
+          <a href="#band" class="rounded-full border border-oltin text-oltin text-sm px-6 py-3 hover:bg-oltin hover:text-fon">Band qilish</a>
+        </div>
+      </article>
+
+      <article class="bg-panel border border-white/10 rounded-2xl p-6">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-sarlavha text-2xl">Adirlar</h3>
+          <span class="text-xs text-red-400 border border-red-400/40 rounded-full px-3 py-1 whitespace-nowrap">Yopiq</span>
+        </div>
+        <p class="mt-3 text-sm text-xira leading-relaxed">Kamdan-kam uchraydigan ov go'shti va tanlangan o'tloq mahsulotlari.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">Yo'nalishlar</a>
+          <a href="#band" class="rounded-full border border-oltin text-oltin text-sm px-6 py-3 hover:bg-oltin hover:text-fon">Band qilish</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= MASKANLAR KARTALARI ================= -->
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="text-center">
+      <p class="text-oltin text-sm">Maskanlar</p>
+      <h2 class="font-sarlavha text-3xl md:text-4xl mt-2">Maskanlarimizni o'rganing</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-6">
+
+      <article class="bg-panel border border-white/10 rounded-2xl overflow-hidden">
+        <img src="./img/Image (42).png" alt="Shahar markazi maskani" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="font-sarlavha text-2xl">Saffron &amp; Ember — Shahar markazi</h3>
+            <span class="text-xs text-green-400 border border-green-400/40 rounded-full px-3 py-1 whitespace-nowrap">Hozir ochiq</span>
+          </div>
+          <p class="mt-4 text-sm text-xira">Firelight shoh ko'chasi 120, Markaziy tuman</p>
+          <p class="mt-1 text-sm text-xira">+1 (555) 012-3456</p>
+          <p class="mt-4 pt-4 border-t border-white/10 text-sm text-matn/80">Valet parking · Terrasa · Yer osti vinoxonasi · Bar</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">Yo'nalishni olish</a>
+            <a href="#band" class="rounded-full border border-oltin text-oltin text-sm px-6 py-3 hover:bg-oltin hover:text-fon">Shu yerda band qilish</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-panel border border-white/10 rounded-2xl overflow-hidden">
+        <img src="./img/Image (43).png" alt="Sohil bo'yi maskani" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="font-sarlavha text-2xl">Saffron &amp; Ember — Sohil bo'yi</h3>
+            <span class="text-xs text-green-400 border border-green-400/40 rounded-full px-3 py-1 whitespace-nowrap">Hozir ochiq</span>
+          </div>
+          <p class="mt-4 text-sm text-xira">Harbor ko'rinishi 45, Pristan 12</p>
+          <p class="mt-1 text-sm text-xira">+1 (555) 098-7654</p>
+          <p class="mt-4 pt-4 border-t border-white/10 text-sm text-matn/80">Parking · Qayiq to'xtash joyi · Jonli musiqa · Xususiy zal</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#" class="rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon text-sm font-semibold px-6 py-3">Yo'nalishni olish</a>
+            <a href="#band" class="rounded-full border border-oltin text-oltin text-sm px-6 py-3 hover:bg-oltin hover:text-fon">Shu yerda band qilish</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= TUYG'ULAR MASKANI ================= -->
+  <section class="max-w-6xl mx-auto px-6 pb-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-oltin text-sm">Umumiy ma'lumot</p>
+      <h2 class="font-sarlavha text-4xl md:text-5xl mt-2">Tuyg'ular maskani</h2>
+      <p class="mt-6 text-matn/80 leading-relaxed">
+        Bizning shahar markazidagi maskanimiz vertikal boshpana sifatida yaratilgan. Ochiq oshxonaning
+        xom temiridan tortib duxoba bilan qoplangan shinam burchaklarigacha har bir santimetr mahorat
+        va olov haqida hikoya qiladi.
+      </p>
+      <ul class="mt-6 space-y-2 text-sm text-matn/80">
+        <li>120 kishilik asosiy zal</li>
+        <li>Eksklyuziv Oshpaz stoli (8 kishi uchun)</li>
+        <li>Mukofotga sazovor bo'lgan yer osti vinoxonasi</li>
+      </ul>
+    </div>
+    <img src="./img/Image (46).png" alt="Olov yonidagi stol"
+         class="w-full rounded-2xl border border-white/10 object-cover">
+  </section>
+
+  <!-- ================= QANDAY BORISH ================= -->
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="text-center">
+      <p class="text-oltin text-sm">Yo'l</p>
+      <h2 class="font-sarlavha text-3xl md:text-4xl mt-2">Bizga qanday borish mumkin</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="bg-panel border border-white/10 rounded-2xl p-6">
+        <h3 class="font-sarlavha text-lg">Avtomobilda</h3>
+        <p class="mt-2 text-sm text-xira leading-relaxed">Barcha manzillarda valet parking mavjud. 200 metr masofada umumiy to'xtash joylari bor.</p>
+      </div>
+      <div class="bg-panel border border-white/10 rounded-2xl p-6">
+        <h3 class="font-sarlavha text-lg">Metroda</h3>
+        <p class="mt-2 text-sm text-xira leading-relaxed">Markaziy vokzal yoki Waterfront Boulevard bekatidan 5 daqiqalik piyoda yo'l.</p>
+      </div>
+      <div class="bg-panel border border-white/10 rounded-2xl p-6">
+        <h3 class="font-sarlavha text-lg">Taksida</h3>
+        <p class="mt-2 text-sm text-xira leading-relaxed">Asosiy kirish foyesida maxsus tushirish punktlari belgilangan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ALOQA ================= -->
+  <section class="max-w-6xl mx-auto px-6 pb-24 grid md:grid-cols-2 gap-12 items-start">
+
+    <!-- Forma (JavaScriptsiz; yuborish uchun keyin server ulanadi) -->
+    <form action="#" method="post" class="bg-panel border border-white/10 rounded-2xl p-8">
+      <h2 class="font-sarlavha text-3xl">Biz bilan bog'laning</h2>
+      <p class="mt-3 text-sm text-xira">Xususiy tadbirlar, korporativ hamkorlik yoki matbuot so'rovlari uchun.</p>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block">
+          <span class="text-xs text-oltin">Ism</span>
+          <input type="text" name="ism" class="mt-2 w-full rounded-xl bg-fon border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-oltin">
+        </label>
+        <label class="block">
+          <span class="text-xs text-oltin">Elektron pochta</span>
+          <input type="email" name="email" class="mt-2 w-full rounded-xl bg-fon border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-oltin">
+        </label>
+      </div>
+
+      <label class="block mt-4">
+        <span class="text-xs text-oltin">Mavzu</span>
+        <select name="mavzu" class="mt-2 w-full rounded-xl bg-fon border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-oltin">
+          <option>Xususiy kechki ovqat</option>
+          <option>Korporativ tadbir</option>
+          <option>Matbuot so'rovi</option>
+        </select>
+      </label>
+
+      <label class="block mt-4">
+        <span class="text-xs text-oltin">Xabar</span>
+        <textarea name="xabar" rows="5" class="mt-2 w-full rounded-xl bg-fon border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-oltin"></textarea>
+      </label>
+
+      <button type="submit" class="mt-6 w-full rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon font-semibold px-6 py-4">
+        Xabarni yuborish
+      </button>
+    </form>
+
+    <!-- Konsyerj -->
+    <div>
+      <img src="./img/Image (44).png" alt="Konsyerj jamoasi"
+           class="w-full rounded-2xl border border-white/10 object-cover">
+      <h2 class="font-sarlavha text-2xl mt-8">Konsyerj jamoasi</h2>
+      <p class="mt-3 text-sm text-xira leading-relaxed">
+        Bizning maxsus jamoamiz sizning tajribangiz kelishingizdan oldin boshlanishini ta'minlash
+        uchun shu yerda. Biz har qanday maxsus so'rovlarni alohida e'tibor va g'amxo'rlik bilan bajaramiz.
+      </p>
+      <a href="mailto:concierge@saffronember.com" class="inline-block mt-4 text-sm text-oltin hover:underline">concierge@saffronember.com</a>
+    </div>
+  </section>
+
+  <!-- ================= BAND QILISH ================= -->
+  <section id="band" class="relative">
+    <img src="./img/Image (45).png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30">
+    <div class="relative max-w-3xl mx-auto px-6 py-28 text-center">
+      <h2 class="font-sarlavha text-3xl md:text-5xl">Bugun kechki ovqat uchun joy band qiling</h2>
+      <p class="mt-6 text-matn/80">Olov taftini his eting va taomlanish san'atini qaytadan kashf qiling.</p>
+      <a href="tel:+998000000000" class="inline-block mt-8 rounded-full bg-gradient-to-r from-orange-500 to-oltin text-fon font-semibold px-8 py-4">
+        Tajribangizni band qiling
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div>
+        <a href="index.html" class="font-sarlavha text-2xl text-oltin">Saffron &amp; Ember</a>
+        <p class="mt-4 text-sm text-xira leading-relaxed">Olov, tuz va nafis lazzatga intilish bilan belgilangan murakkab pazandachilik tajribalari.</p>
+      </div>
+
+      <div>
+        <p class="text-oltin text-sm">O'rganing</p>
+        <ul class="mt-4 space-y-2 text-sm text-xira">
+          <li><a href="#" class="hover:text-oltin">Bizning tariximiz</a></li>
+          <li><a href="#" class="hover:text-oltin">Taomnoma</a></li>
+          <li><a href="#" class="hover:text-oltin">Xususiy tadbirlar</a></li>
+          <li><a href="#" class="hover:text-oltin">Sovg'a kartalari</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-oltin text-sm">Huquqiy ma'lumot</p>
+        <ul class="mt-4 space-y-2 text-sm text-xira">
+          <li><a href="#" class="hover:text-oltin">Maxfiylik siyosati</a></li>
+          <li><a href="#" class="hover:text-oltin">Foydalanish shartlari</a></li>
+          <li><a href="#" class="hover:text-oltin">Imkoniyati cheklanganlar uchun</a></li>
+          <li><a href="#aloqa" class="hover:text-oltin">Biz bilan bog'laning</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-oltin text-sm">Yangiliklar</p>
+        <form action="#" method="post" class="mt-4 flex gap-2">
+          <input type="email" name="email" placeholder="Elektron pochta manzili"
+                 class="w-full rounded-xl bg-panel border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-oltin">
+          <button type="submit" class="rounded-xl bg-oltin text-fon font-semibold px-4">OK</button>
+        </form>
+        <p class="mt-4 text-xs text-xira">© 2024 Saffron &amp; Ember. Barcha huquqlar himoyalangan.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
